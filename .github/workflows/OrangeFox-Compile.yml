@@ -24,7 +24,7 @@ on:
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch'
         required: true
-        default: 'android-10.0-R"
+        default: 'android-10.0-R'
       DEVICE_PATH:
         description: 'Specify your device path.'
         required: true
