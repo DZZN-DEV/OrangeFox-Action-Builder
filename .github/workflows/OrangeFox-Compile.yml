@@ -20,19 +20,19 @@ on:
       DEVICE_TREE:
         description: 'Custom Recovery Tree'
         required: true
-        default: 'https://github.com/cd-Crypton/custom_recovery_tree_realme_nashc'
+        default: 'https://github.com/DZZN-DEV/shrp_device_xiaomi_merlin.git'
       DEVICE_TREE_BRANCH:
         description: 'Custom Recovery Tree Branch'
         required: true
-        default: 'android-12.1'
+        default: 'android-10.0-R"
       DEVICE_PATH:
         description: 'Specify your device path.'
         required: true
-        default: 'device/realme/nashc'
+        default: 'device/xiaomi/merlin'
       DEVICE_NAME:
         description: 'Specify your Device Codename.'
         required: true
-        default: 'nashc'
+        default: 'merlin'
       BUILD_TARGET:
         description: 'Specify your Build Target'
         required: true
@@ -103,6 +103,9 @@ jobs:
         set +e
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
+        export OF_PATCH_AVB20=1
+        export OF_FORCE_PREBUILT_KERNEL=1
+        
         set -e
         ${{ steps.fox_branch.outputs.value }}
 
